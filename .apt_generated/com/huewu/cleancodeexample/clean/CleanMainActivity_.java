@@ -11,11 +11,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
-import com.googlecode.androidannotations.api.BackgroundExecutor;
 import com.googlecode.androidannotations.api.SdkVersionHelper;
 import com.huewu.cleancodeexample.ContentFragment;
 import com.huewu.cleancodeexample.HeaderFragment;
@@ -37,8 +35,8 @@ public final class CleanMainActivity_
     }
 
     private void afterSetContentView_() {
-        mContentFrag = ((ContentFragment) findSupportFragmentByTag("content"));
         mHeaderFrag = ((HeaderFragment) findSupportFragmentByTag("header"));
+        mContentFrag = ((ContentFragment) findSupportFragmentByTag("content"));
     }
 
     @Override
@@ -77,24 +75,6 @@ public final class CleanMainActivity_
         }
         FragmentActivity activity_ = ((FragmentActivity) this);
         return activity_.getSupportFragmentManager().findFragmentByTag(tag);
-    }
-
-    @Override
-    public void doSleep() {
-        BackgroundExecutor.execute(new Runnable() {
-
-
-            @Override
-            public void run() {
-                try {
-                    CleanMainActivity_.super.doSleep();
-                } catch (RuntimeException e) {
-                    Log.e("CleanMainActivity_", "A runtime exception was thrown while executing code in a runnable", e);
-                }
-            }
-
-        }
-        );
     }
 
     public static class IntentBuilder_ {

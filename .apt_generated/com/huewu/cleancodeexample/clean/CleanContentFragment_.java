@@ -27,8 +27,8 @@ public final class CleanContentFragment_
     }
 
     private void afterSetContentView_() {
-        mTextView = ((View) findViewById(com.huewu.cleancodeexample.R.id.content_text));
         mImageView = ((View) findViewById(com.huewu.cleancodeexample.R.id.content_image));
+        mTextView = ((View) findViewById(com.huewu.cleancodeexample.R.id.content_text));
     }
 
     @Override

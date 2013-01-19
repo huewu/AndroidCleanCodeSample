@@ -1,3 +1,4 @@
+
 package com.huewu.cleancodeexample;
 
 import android.os.Bundle;
@@ -7,13 +8,14 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.Menu;
 
-public class MainActivity extends FragmentActivity implements HeaderFragment.OnHeaderListener, ContentFragment.OnContentListener {
-    
+public class MainActivity extends FragmentActivity implements HeaderFragment.OnHeaderListener,
+        ContentFragment.OnContentListener {
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
+
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction tr = fm.beginTransaction();
         tr.replace(R.id.header, new HeaderFragment(), "header");
@@ -39,7 +41,7 @@ public class MainActivity extends FragmentActivity implements HeaderFragment.OnH
     public void onShowImage() {
         FragmentManager fm = getSupportFragmentManager();
         Fragment frag = fm.findFragmentByTag("content");
-        if (frag instanceof ContentFragment ){
+        if (frag instanceof ContentFragment) {
             ((ContentFragment) frag).showImage();
         }
     }
@@ -48,9 +50,9 @@ public class MainActivity extends FragmentActivity implements HeaderFragment.OnH
     public void onShowText() {
         FragmentManager fm = getSupportFragmentManager();
         Fragment frag = fm.findFragmentByTag("content");
-        if (frag instanceof ContentFragment ){
+        if (frag instanceof ContentFragment) {
             ((ContentFragment) frag).showText();
         }
     }
-    
-}//end of class
+
+}// end of class

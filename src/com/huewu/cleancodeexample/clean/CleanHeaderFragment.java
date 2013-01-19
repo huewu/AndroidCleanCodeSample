@@ -1,3 +1,4 @@
+
 package com.huewu.cleancodeexample.clean;
 
 import android.support.v4.app.Fragment;
@@ -8,15 +9,15 @@ import com.huewu.cleancodeexample.R;
 
 @EFragment(R.layout.header)
 public class CleanHeaderFragment extends Fragment {
-    
+
     @Click(R.id.header_image)
-    void onClickImage(){
+    void onClickImage() {
         MyEventBus.getBus().post(new ShowImageEvent());
     }
-    
+
     @Click(R.id.header_text)
-    void onClickText(){
+    void onClickText() {
         MyEventBus.getBus().post(new ShowTextEvent());
     }
-    
-}//end of class
+
+}// end of class

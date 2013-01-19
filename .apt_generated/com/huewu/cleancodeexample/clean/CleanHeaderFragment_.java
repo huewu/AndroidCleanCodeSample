@@ -29,21 +29,6 @@ public final class CleanHeaderFragment_
 
     private void afterSetContentView_() {
         {
-            View view = findViewById(com.huewu.cleancodeexample.R.id.header_image);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        CleanHeaderFragment_.this.onClickImage();
-                    }
-
-                }
-                );
-            }
-        }
-        {
             View view = findViewById(com.huewu.cleancodeexample.R.id.header_text);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
@@ -52,6 +37,21 @@ public final class CleanHeaderFragment_
                     @Override
                     public void onClick(View view) {
                         CleanHeaderFragment_.this.onClickText();
+                    }
+
+                }
+                );
+            }
+        }
+        {
+            View view = findViewById(com.huewu.cleancodeexample.R.id.header_image);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        CleanHeaderFragment_.this.onClickImage();
                     }
 
                 }
